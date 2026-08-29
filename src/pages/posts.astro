@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import PostCard from "@/components/PostCard.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
+import { visiblePosts } from "@/lib/posts";
+
+const allPosts = visiblePosts(await getCollection("posts"));
+---
+
+<BaseLayout title="Arquivo" description={`Todos os posts de ${siteConfig.name}.`}>
+  <SiteHeader posts={allPosts} />
+  <main id="content" class="outer">
+    <div class="canvas">
+      <header class="pagehead">
+        <p class="eyebrow">Arquivo</p>
+        <h1 class="pagehead-title">Todos os posts</h1>
+        <p class="pagehead-description">
+          {allPosts.length} {allPosts.length === 1 ? "post publicado" : "posts publicados"} até agora.
+        </p>
+      </header>
+
+      {
+        allPosts.length > 0 ? (
+          <div class="feed">
+            {allPosts.map((post) => <PostCard post={post} />)}
+          </div>
+        ) : (
+          <p class="text-muted-foreground">Nenhum post publicado ainda.</p>
+        )
+      }
+    </div>
+  </main>
+  <SiteFooter />
+</BaseLayout>

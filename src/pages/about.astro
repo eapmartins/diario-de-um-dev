@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import SiteFooter from "@/components/SiteFooter.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
+import { visiblePosts } from "@/lib/posts";
+
+const allPosts = visiblePosts(await getCollection("posts"));
+---
+
+<BaseLayout title="Sobre" description={siteConfig.about}>
+  <SiteHeader posts={allPosts} />
+  <main id="content" class="outer">
+    <div class="canvas">
+      <header class="pagehead">
+        <p class="eyebrow">Sobre</p>
+        <h1 class="pagehead-title">{siteConfig.name}</h1>
+      </header>
+
+      <div class="prose">
+        <p>{siteConfig.about}</p>
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</BaseLayout>

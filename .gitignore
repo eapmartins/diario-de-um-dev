@@ -1,0 +1,30 @@
+# Astro default build output
+dist/
+
+# Astro cache
+.astro/
+
+# Node.js dependencies
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Superpowers brainstorming/sdd scratch state
+.superpowers/

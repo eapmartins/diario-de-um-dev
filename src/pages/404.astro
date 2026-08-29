@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import SiteFooter from "@/components/SiteFooter.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { visiblePosts } from "@/lib/posts";
+
+const allPosts = visiblePosts(await getCollection("posts"));
+---
+
+<BaseLayout title="Página não encontrada" noindex>
+  <SiteHeader posts={allPosts} />
+  <main id="content" class="outer">
+    <div class="canvas flex min-h-[50vh] flex-col items-center justify-center gap-4 py-20 text-center">
+      <p class="eyebrow">Erro 404</p>
+      <h1 class="pagehead-title">Página não encontrada</h1>
+      <p class="max-w-md text-sm leading-relaxed text-muted-foreground">
+        Esta página não existe — ela pode ter sido movida, ou o link está quebrado.
+      </p>
+      <a href="/" class="btn btn-solid mt-6">Voltar para a página inicial</a>
+    </div>
+  </main>
+  <SiteFooter />
+</BaseLayout>
