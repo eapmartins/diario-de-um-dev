@@ -25,4 +25,23 @@ const posts = defineCollection({
     }),
 });
 
-export const collections = { posts };
+const books = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/books" }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      author: z.string(),
+      status: z.enum(["quero-ler", "lendo", "lido"]),
+      cover: z
+        .object({
+          src: image(),
+          alt: z.string(),
+        })
+        .optional(),
+      rating: z.number().min(1).max(5).optional(),
+      startedDate: z.coerce.date().optional(),
+      finishedDate: z.coerce.date().optional(),
+    }),
+});
+
+export const collections = { posts, books };
