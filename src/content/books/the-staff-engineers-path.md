@@ -2,6 +2,9 @@
 title: "The Staff Engineer's Path"
 author: "Tanya Reilly"
 status: "lido"
+cover:
+  src: "https://covers.openlibrary.org/b/id/15104792-L.jpg"
+  alt: "Capa do livro The Staff Engineer's Path"
 rating: 4
 startedDate: 2026-07-01
 finishedDate: 2026-07-25
