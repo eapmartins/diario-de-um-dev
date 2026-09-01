@@ -1,7 +1,14 @@
 import type { CollectionEntry } from "astro:content";
 
+/**
+ * Single source of truth for reading statuses, in display order (Lendo,
+ * Quero ler, Lido). Also imported by `content.config.ts` for the Zod
+ * schema, so a status can't be added to one without the other.
+ */
+export const bookStatuses = ["lendo", "quero-ler", "lido"] as const;
+
 export type Book = CollectionEntry<"books">;
-export type BookStatus = Book["data"]["status"];
+export type BookStatus = (typeof bookStatuses)[number];
 
 export const bookSlug = (book: Book) => book.id.replace(/\/index$/, "");
 
@@ -15,16 +22,13 @@ const statusLabels: Record<BookStatus, string> = {
 
 export const statusLabel = (status: BookStatus) => statusLabels[status];
 
-/** Display order for grouped listings. */
-const statusOrder: BookStatus[] = ["lendo", "quero-ler", "lido"];
-
 /**
  * Books grouped by status, in display order (Lendo, Quero ler, Lido).
  * Empty groups are dropped. "Lendo" sorts by startedDate desc, "Lido" by
  * finishedDate desc, "Quero ler" alphabetically (no natural date to sort by).
  */
 export const groupByStatus = (books: Book[]) =>
-  statusOrder
+  bookStatuses
     .map((status) => ({
       status,
       label: statusLabel(status),

@@ -1,6 +1,5 @@
 ---
 import { getCollection, render } from "astro:content";
-import { Image } from "astro:assets";
 import Comments from "@/components/Comments.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
 import SiteHeader from "@/components/SiteHeader.astro";
@@ -37,7 +36,7 @@ const description = `Minhas anotações de leitura sobre ${title}, de ${author}.
         <div class="book-pagehead-cover">
           {
             cover ? (
-              <Image src={cover.src} alt={cover.alt} width={240} height={360} class="book-cover-img" />
+              <img src={cover.src} alt={cover.alt} loading="lazy" class="book-cover-img" />
             ) : (
               <div class="book-cover-placeholder" aria-hidden="true">
                 <span>{title}</span>
@@ -50,7 +49,7 @@ const description = `Minhas anotações de leitura sobre ${title}, de ${author}.
           <h1 class="pagehead-title">{title}</h1>
           <p class="meta mt-5">
             <span class="pill">{statusLabel(status)}</span>
-            {stars && <span aria-label={`Nota: ${rating} de 5`}>{stars}</span>}
+            {stars && <span role="img" aria-label={`Nota: ${rating} de 5`}>{stars}</span>}
             {startedDate && <span>Início: {formatDate(startedDate, "long")}</span>}
             {finishedDate && <span>Fim: {formatDate(finishedDate, "long")}</span>}
           </p>
@@ -68,6 +67,8 @@ const description = `Minhas anotações de leitura sobre ${title}, de ${author}.
   </main>
   <SiteFooter />
 </BaseLayout>
+
+<script src="../../scripts/copy-code.js"></script>
 
 <style>
   .book-pagehead {

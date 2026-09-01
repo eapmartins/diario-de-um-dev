@@ -2,6 +2,9 @@
 title: "Clojure for the Brave and True"
 author: "Daniel Higginbotham"
 status: "lido"
+cover:
+  src: "https://covers.openlibrary.org/b/id/10587583-L.jpg"
+  alt: "Capa do livro Clojure for the Brave and True"
 rating: 5
 startedDate: 2026-03-01
 finishedDate: 2026-04-10

@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { bookHref, ratingStars, type Book } from "@/lib/books";
 
 interface Props {
@@ -17,7 +16,7 @@ const stars = ratingStars(rating);
     <div class="book-cover">
       {
         cover ? (
-          <Image src={cover.src} alt={cover.alt} width={320} height={480} class="book-cover-img" />
+          <img src={cover.src} alt={cover.alt} loading="lazy" class="book-cover-img" />
         ) : (
           <div class="book-cover-placeholder" aria-hidden="true">
             <span>{title}</span>
@@ -29,7 +28,7 @@ const stars = ratingStars(rating);
     <p class="book-card-author text-sm text-muted-foreground">{author}</p>
     {
       status === "lido" && stars && (
-        <p class="book-card-rating mt-1" aria-label={`Nota: ${rating} de 5`}>
+        <p class="book-card-rating mt-1" role="img" aria-label={`Nota: ${rating} de 5`}>
           {stars}
         </p>
       )

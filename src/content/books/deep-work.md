@@ -2,6 +2,9 @@
 title: "Deep Work"
 author: "Cal Newport"
 status: "lendo"
+cover:
+  src: "https://covers.openlibrary.org/b/id/7988607-L.jpg"
+  alt: "Capa do livro Deep Work"
 startedDate: 2026-08-20
 ---
 

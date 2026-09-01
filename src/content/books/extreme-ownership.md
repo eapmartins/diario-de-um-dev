@@ -2,6 +2,9 @@
 title: "Extreme Ownership"
 author: "Jocko Willink, Leif Babin"
 status: "lido"
+cover:
+  src: "https://covers.openlibrary.org/b/id/12835042-L.jpg"
+  alt: "Capa do livro Extreme Ownership"
 rating: 4
 startedDate: 2026-05-01
 finishedDate: 2026-05-18
