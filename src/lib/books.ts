@@ -24,8 +24,9 @@ export const statusLabel = (status: BookStatus) => statusLabels[status];
 
 /**
  * Books grouped by status, in display order (Lendo, Quero ler, Lido).
- * Empty groups are dropped. "Lendo" sorts by startedDate desc, "Lido" by
- * finishedDate desc, "Quero ler" alphabetically (no natural date to sort by).
+ * Empty groups are dropped. "Lendo" sorts by startedDate desc (most
+ * recently started first), "Lido" by finishedDate asc (oldest finish
+ * first), "Quero ler" alphabetically (no natural date to sort by).
  */
 export const groupByStatus = (books: Book[]) =>
   bookStatuses
@@ -39,7 +40,7 @@ export const groupByStatus = (books: Book[]) =>
             return (b.data.startedDate?.getTime() ?? 0) - (a.data.startedDate?.getTime() ?? 0);
           }
           if (status === "lido") {
-            return (b.data.finishedDate?.getTime() ?? 0) - (a.data.finishedDate?.getTime() ?? 0);
+            return (a.data.finishedDate?.getTime() ?? 0) - (b.data.finishedDate?.getTime() ?? 0);
           }
           return a.data.title.localeCompare(b.data.title, "pt-BR");
         }),
