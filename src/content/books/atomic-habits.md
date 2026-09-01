@@ -3,7 +3,7 @@ title: "Atomic Habits"
 author: "James Clear"
 status: "lido"
 cover:
-  src: "https://covers.openlibrary.org/b/id/12539702-L.jpg"
+  src: "https://covers.openlibrary.org/b/id/15087154-L.jpg"
   alt: "Capa do livro Atomic Habits"
 rating: 5
 startedDate: 2026-06-01
