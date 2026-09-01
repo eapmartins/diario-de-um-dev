@@ -5,5 +5,5 @@ status: "lendo"
 cover:
   src: "https://covers.openlibrary.org/b/id/12835042-L.jpg"
   alt: "Capa do livro Extreme Ownership"
-startedDate: 2026-08-15
+startedDate: 2026-08-21
 ---
