@@ -127,6 +127,13 @@
     box-sizing: border-box;
   }
 
+  /* Reserves the scrollbar's width on every page, so short pages (no
+     scroll needed) don't render ~15px wider than long ones and shift
+     the centered layout sideways between routes. */
+  html {
+    scrollbar-gutter: stable;
+  }
+
   body {
     min-width: 320px;
     margin: 0;
