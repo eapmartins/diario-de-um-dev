@@ -1,0 +1,82 @@
+---
+import { bookHref, ratingStars, type Book } from "@/lib/books";
+
+interface Props {
+  book: Book;
+}
+
+const { book } = Astro.props;
+const { title, author, status, rating, cover } = book.data;
+const href = bookHref(book);
+const stars = ratingStars(rating);
+---
+
+<article class="book-card">
+  <a href={href} class="link-title">
+    <div class="book-cover">
+      {
+        cover ? (
+          <img src={cover.src} alt={cover.alt} loading="lazy" class="book-cover-img" />
+        ) : (
+          <div class="book-cover-placeholder" aria-hidden="true">
+            <span>{title}</span>
+          </div>
+        )
+      }
+    </div>
+    <p class="book-card-title link-title__text mt-3 font-semibold">{title}</p>
+    <p class="book-card-author text-sm text-muted-foreground">{author}</p>
+    {
+      status === "lido" && stars && (
+        <p class="book-card-rating mt-1" role="img" aria-label={`Nota: ${rating} de 5`}>
+          {stars}
+        </p>
+      )
+    }
+  </a>
+</article>
+
+<style>
+  .book-cover {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--muted);
+  }
+
+  .book-cover-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .book-cover-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    text-align: center;
+    color: var(--muted-foreground);
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .book-card-title {
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  .book-card-author {
+    margin-top: 0.15rem;
+  }
+
+  .book-card-rating {
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+</style>

@@ -21,6 +21,7 @@ export const siteConfig = {
 /** Header navigation. Renders in the desktop header and the mobile menu. */
 export const navigation = [
   { label: "Arquivo", href: "/posts/" },
+  { label: "Livros", href: "/livros/" },
   { label: "Categorias", href: "/categories/" },
   { label: "Sobre", href: "/about/" },
 ];

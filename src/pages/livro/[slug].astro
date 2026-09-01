@@ -1,0 +1,116 @@
+---
+import { getCollection, render } from "astro:content";
+import Comments from "@/components/Comments.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { bookSlug, ratingStars, statusLabel, type Book } from "@/lib/books";
+import { formatDate, visiblePosts } from "@/lib/posts";
+
+export async function getStaticPaths() {
+  const books = await getCollection("books");
+
+  return books.map((book) => ({
+    params: { slug: bookSlug(book) },
+    props: { book },
+  }));
+}
+
+interface Props {
+  book: Book;
+}
+
+const { book } = Astro.props;
+const { Content } = await render(book);
+const { title, author, status, rating, startedDate, finishedDate, cover } = book.data;
+const allPosts = visiblePosts(await getCollection("posts"));
+const stars = ratingStars(rating);
+const description = `Minhas anotações de leitura sobre ${title}, de ${author}.`;
+---
+
+<BaseLayout title={title} description={description} type="article">
+  <SiteHeader posts={allPosts} />
+  <main id="content" class="outer">
+    <article class="canvas">
+      <header class="pagehead book-pagehead">
+        <div class="book-pagehead-cover">
+          {
+            cover ? (
+              <img src={cover.src} alt={cover.alt} loading="lazy" class="book-cover-img" />
+            ) : (
+              <div class="book-cover-placeholder" aria-hidden="true">
+                <span>{title}</span>
+              </div>
+            )
+          }
+        </div>
+        <div class="book-pagehead-info">
+          <p class="eyebrow">{author}</p>
+          <h1 class="pagehead-title">{title}</h1>
+          <p class="meta mt-5">
+            <span class="pill">{statusLabel(status)}</span>
+            {stars && <span role="img" aria-label={`Nota: ${rating} de 5`}>{stars}</span>}
+            {startedDate && <span>Início: {formatDate(startedDate, "long")}</span>}
+            {finishedDate && <span>Fim: {formatDate(finishedDate, "long")}</span>}
+          </p>
+        </div>
+      </header>
+
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+
+    <div class="canvas mt-16">
+      <Comments />
+    </div>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<script src="../../scripts/copy-code.js"></script>
+
+<style>
+  .book-pagehead {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    align-items: flex-start;
+  }
+
+  .book-pagehead-cover {
+    width: 9rem;
+    aspect-ratio: 2 / 3;
+    flex: 0 0 auto;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--muted);
+  }
+
+  .book-cover-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .book-cover-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0.75rem;
+    text-align: center;
+    color: var(--muted-foreground);
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .book-pagehead-info {
+    flex: 1 1 16rem;
+    min-width: 0;
+  }
+</style>

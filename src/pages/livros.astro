@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+import BookCard from "@/components/BookCard.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { groupByStatus } from "@/lib/books";
+import { visiblePosts } from "@/lib/posts";
+
+const allPosts = visiblePosts(await getCollection("posts"));
+const books = await getCollection("books");
+const groups = groupByStatus(books);
+---
+
+<BaseLayout
+  title="Livros"
+  description="Livros que estou lendo, já li, ou quero ler, com minhas anotações."
+>
+  <SiteHeader posts={allPosts} />
+  <main id="content" class="outer">
+    <div class="canvas">
+      <header class="pagehead">
+        <p class="eyebrow">Índice</p>
+        <h1 class="pagehead-title">Livros</h1>
+        <p class="pagehead-description">
+          {books.length} {books.length === 1 ? "livro registrado" : "livros registrados"} até agora.
+        </p>
+      </header>
+
+      {
+        groups.length > 0 ? (
+          groups.map((group) => (
+            <section class="mt-16 first:mt-0">
+              <h2 class="section-title">{group.label}</h2>
+              <div class="book-grid mt-6">
+                {group.books.map((book) => (
+                  <BookCard book={book} />
+                ))}
+              </div>
+            </section>
+          ))
+        ) : (
+          <p class="text-muted-foreground">Nenhum livro registrado ainda.</p>
+        )
+      }
+    </div>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .book-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .book-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>
