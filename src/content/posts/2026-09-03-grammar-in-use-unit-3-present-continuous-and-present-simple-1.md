@@ -31,7 +31,7 @@ Essa segunda frase já usa outro tempo verbal (Present Perfect, com *have lived*
 
 Isso já apareceu no post da Unit 1, mas o livro retoma aqui, comparando lado a lado com o Present Simple.
 
-**Present Continuous + *always***: dá ênfase em algo que acontece com mais frequência do que deveria, ou do que era esperado. É uma reclamação.
+**Present Continuous + *always***: dá ênfase em algo que acontece com mais frequência do que deveria, geralmente como reclamação (mas pode ser só surpresa).
 
 - <mark>*"You're always asking the same question."*</mark> (você vive fazendo a mesma pergunta), indica que a pessoa pergunta mais do que o esperado.
 

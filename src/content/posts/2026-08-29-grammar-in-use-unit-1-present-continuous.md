@@ -78,7 +78,7 @@ Um padrão bem comum pra esse uso é comparativo + *getting*: o comparativo já 
 
 ## Reclamação com *always*
 
-Outro uso que achei curioso: Present Continuous + *always* serve pra reclamar de algo que se repete demais. <mark>*"He's always losing his keys"*</mark> não é uma constatação neutra como seria no Simple Present (<mark>*"He always loses his keys"*</mark>). É uma reclamação, é como dizer "ele vive perdendo a chave, de novo".
+Outro uso que achei curioso: Present Continuous + *always* dá ênfase em algo que se repete mais do que o esperado, geralmente como reclamação (mas pode ser só surpresa). <mark>*"He's always losing his keys"*</mark> não é uma constatação neutra como seria no Simple Present (<mark>*"He always loses his keys"*</mark>). É uma reclamação, é como dizer "ele vive perdendo a chave, de novo".
 
 ## Planos já marcados
 
