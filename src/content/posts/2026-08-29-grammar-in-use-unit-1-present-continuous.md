@@ -88,11 +88,9 @@ Present Continuous também aparece pra falar de compromissos futuros já combina
 
 Present Continuous = *to be* + verbo-*ing*, usado para o que está acontecendo agora, nesta fase temporária, para uma mudança gradual, pra reclamar de algo repetitivo com *always*, ou pra um plano futuro já combinado. Nunca para hábitos, e raramente com verbos de estado.
 
-## Perguntas pra comentar
+## Deixe nos comentários a sua resposta :)
 
 <div class="callout">
-
-Deixo algumas perguntas aqui, quem quiser topar é só responder nos comentários:
 
 1. Se você mora temporariamente em outro país por alguns meses, qual você diria?
    - <mark>*"I live in Portugal"*</mark>
