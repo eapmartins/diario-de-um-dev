@@ -23,9 +23,6 @@ O Present Continuous também serve pra situações temporárias, algo que vale s
 Já o Present Simple serve pra situações permanentes, que duram por muito tempo:
 
 - <mark>*"My parents live in Sao Paulo."*</mark> (meus pais moram em São Paulo)
-- <mark>*"They have lived there all their lives."*</mark> (eles moraram lá a vida toda)
-
-Essa segunda frase já usa outro tempo verbal (Present Perfect, com *have lived*), que ainda não vimos, mas repare no efeito: ela reforça que é uma situação permanente, e não passageira.
 
 ## I always do vs. I'm always doing
 
