@@ -24,7 +24,7 @@ Já para fatos, coisas verdadeiras em geral, sem repetição envolvida:
 
 ## Terceira pessoa: +s / +es
 
-Na primeira e segunda pessoa (I, you, we, they) o verbo fica na forma base: *play*, *brush*, *read*. Na terceira pessoa do singular (he, she, it), adicionamos **-s**.
+Em todas as pessoas, exceto a terceira do singular (I, you, we, they), o verbo fica na forma base: *play*, *brush*, *read*. Na terceira pessoa do singular (he, she, it), adicionamos **-s**.
 
 | Sujeito | Forma |
 | --- | --- |
@@ -46,7 +46,7 @@ Aqui começa uma regrinha mais chatinha: para perguntar, precisamos adicionar **
 - *Do you play soccer?* (você joga futebol?)
 - *Does she play soccer?* (ela joga futebol?)
 
-Note que para primeira e segunda pessoa usamos **do**, e para terceira pessoa usamos **does**. E aqui vai um detalhe que eu mesmo errei escrevendo essas anotações: quando o **does** já entra na frase, o verbo principal volta pra forma base, sem o **-s**. Então <mark>*"Does she plays soccer?"*</mark> está errado; o certo é **Does she play soccer?**.
+Note que pra todas as pessoas, exceto a terceira do singular, usamos **do**, e só pra terceira pessoa do singular usamos **does**. E aqui vai um detalhe que eu mesmo errei escrevendo essas anotações: quando o **does** já entra na frase, o verbo principal volta pra forma base, sem o **-s**. Então <mark>*"Does she plays soccer?"*</mark> está errado; o certo é **Does she play soccer?**.
 
 O motivo é que o **-s** da terceira pessoa marca uma coisa só: que a frase está na terceira pessoa. Numa afirmativa (<mark>*"She plays soccer"*</mark>), quem carrega essa marca é o próprio verbo, porque não tem auxiliar na frase. Mas assim que aparece um auxiliar (*does*), é ele quem passa a carregar essa marca, e o verbo principal, que já não está mais "sozinho" na frase, volta pra forma base. É por isso que existe *does*, e não só *do* pra tudo: o **-s** não desaparece, ele só muda de lugar, do verbo pro auxiliar.
 
